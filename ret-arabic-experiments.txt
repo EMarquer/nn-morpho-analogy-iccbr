@@ -1,0 +1,81 @@
+
+
+
+All losses at once, limit 200 epochs, lr reg e-3, lr emb e-4
+Loading from classifier     (80 epochs, val_loss=2.370, train_loss=1.990)
+{'precision': 0.3320000171661377, 'success@10': 0.7252500057220459, 'mrr': 0.46088260412216187, 'seed': 42, 'seed_id': 0, 'lang': 'arabic', 'dataset': '2016', 'variant': 'classical', 'criterion': 'all'}
+Not loading from classifier (59 epochs, val_loss=2.400, train_loss=2.220)
+{'precision': 0.1535000056028366, 'success@10': 0.44700002670288086, 'mrr': 0.2544148862361908, 'seed': 42, 'seed_id': 0, 'lang': 'arabic', 'dataset': '2016', 'variant': 'classical', 'criterion': 'all'}
+
+
+All losses at once, limit 200 epochs, lr reg e-3, lr emb e-5
+Loading from classifier (200 epochs, val_loss=3.200, train_loss=2.800)
+{'precision': 0.42375001311302185, 'success@10': 0.8172500133514404, 'mrr': 0.5641176700592041, 'seed': 42, 'seed_id': 0, 'lang': 'arabic', 'dataset': '2016', 'variant': 'classical', 'criterion': 'all'}
+
+All losses at once, limit 200 epochs, lr reg e-3, lr emb e-6
+Loading from classifier (65 epochs, val_loss=7.740, train_loss=7.590)
+Seed 0
+{'precision': 0.7645000219345093, 'success@10': 0.9600000381469727, 'mrr': 0.8401806950569153, 'seed': 42, 'seed_id': 0, 'lang': 'arabic', 'dataset': '2016', 'variant': 'classical', 'criterion': 'all'}
+{'precision': 0.7642500400543213, 'success@10': 0.9602500200271606, 'mrr': 0.840015172958374, 'seed': 42, 'seed_id': 0, 'lang': 'arabic', 'dataset': '2016', 'variant': 'classical', 'criterion': 'all'}
+Seed 1 (134 epochs, val_loss=7.200, train_loss=6.860)
+{'precision': 0.7405000329017639, 'success@10': 0.9570000171661377, 'mrr': 0.8244809508323669, 'seed': 8564851, 'seed_id': 1, 'lang': 'arabic', 'dataset': '2016', 'variant': 'classical', 'criterion': 'all'}
+
+All losses at once, limit 200 epochs, lr reg e-3, lr emb e-7
+Loading from classifier (18 epochs, val_loss=8.410, train_loss=8.300)
+{'precision': 0.7552500367164612, 'success@10': 0.9507500529289246, 'mrr': 0.8312075138092041, 'seed': 42, 'seed_id': 0, 'lang': 'arabic', 'dataset': '2016', 'variant': 'classical', 'criterion': 'all'}
+
+All losses at once, limit 200 epochs, lr reg e-3, lr emb e-8
+Loading from classifier (18 epochs, val_loss=8.410, train_loss=8.300)
+{'precision': 0.7552500367164612, 'success@10': 0.9507500529289246, 'mrr': 0.8312075138092041, 'seed': 42, 'seed_id': 0, 'lang': 'arabic', 'dataset': '2016', 'variant': 'classical', 'criterion': 'all'}
+
+All losses at once, limit 200 epochs, lr reg e-3, no emb learning
+Loading from classifier (18 epochs, val_loss=8.440, train_loss=8.330)
+{'precision': 0.7547500133514404, 'success@10': 0.9502500295639038, 'mrr': 0.8307895064353943, 'seed': 42, 'seed_id': 0, 'lang': 'arabic', 'dataset': '2016', 'variant': 'classical', 'criterion': 'all'}
+
+Baselines:
+alea: precision: 0.2643025
+kolmo: precision: 0.226525
+lepage: precision: 0.331085
+
+
+-- finnish
+All losses at once, limit 200 epochs, lr reg e-3, no emb learning, loading from classifier
+{'precision': 0.9287500381469727, 'success@10': 0.9887500405311584, 'mrr': 0.9532673954963684, 'best_model': 'logs/ret/2016/finnish/transfer/3403636_clf-2016/logs/clf/2016/finnish/version_0/checkpoints/clf-2016-finnish-b512-epoch=14.ckpt/all/version_0/checkpoints/ret-2016-finnish-b512-epoch=25-v2.ckpt', 'seed': 42, 'seed_id': 0, 'lang': 'finnish', 'dataset': '2016', 'variant': 'classical', 'criterion': 'all'}
+
+Cossine emb loss, limit 200 epochs, lr reg e-3, no emb learning, loading from classifier
+{'precision': 0.04025000333786011, 'success@10': 0.17375001311302185, 'mrr': 0.08735619485378265, 'best_model': 'logs/ret/2016/finnish/transfer/3403636_clf-2016/logs/clf/2016/finnish/version_0/checkpoints/clf-2016-finnish-b512-epoch=14.ckpt/cosine_embedding_loss/version_0/checkpoints/ret-2016-finnish-b512-epoch=30.ckpt', 'seed': 42, 'seed_id': 0, 'lang': 'finnish', 'dataset': '2016', 'variant': 'classical', 'criterion': 'cosine embedding loss'}
+
+Relative shuffle loss, limit 200 epochs, lr reg e-3, no emb learning, loading from classifier
+{'precision': 0.9222500324249268, 'success@10': 0.9912500381469727, 'mrr': 0.951048731803894, 'best_model': 'logs/ret/2016/finnish/transfer/3403636_clf-2016/logs/clf/2016/finnish/version_0/checkpoints/clf-2016-finnish-b512-epoch=14.ckpt/relative_shuffle/version_0/checkpoints/ret-2016-finnish-b512-epoch=14.ckpt', 'seed': 42, 'seed_id': 0, 'lang': 'finnish', 'dataset': '2016', 'variant': 'classical', 'criterion': 'relative shuffle'}
+
+Relative all loss, limit 200 epochs, lr reg e-3, no emb learning, loading from classifier
+{'precision': 0.9167500138282776, 'success@10': 0.9857500195503235, 'mrr': 0.9445925951004028, 'best_model': 'logs/ret/2016/finnish/transfer/3403636_clf-2016/logs/clf/2016/finnish/version_0/checkpoints/clf-2016-finnish-b512-epoch=14.ckpt/relative_all/version_0/checkpoints/ret-2016-finnish-b512-epoch=28.ckpt', 'seed': 42, 'seed_id': 0, 'lang': 'finnish', 'dataset': '2016', 'variant': 'classical', 'criterion': 'relative all'}
+
+
+
+
+
+
+
+-- Tests about freezing the embedding model at the start, I ddo not know what they correspond to anymore
+
+
+{'precision': 0.7630000114440918, 'success@10': 0.9607500433921814, 'mrr': 0.8378954529762268, 'best_model': 'logs/ret/2016/arabic/transfer/3403636_clf-2016/logs/clf/2016/arabic/version_0/checkpoints/clf-2016-arabic-b512-epoch=19.ckpt/all/version_0/checkpoints/ret-2016-arabic-b512-epoch=29.ckpt', 'seed': 42, 'seed_id': 0, 'lang': 'arabic', 'dataset': '2016', 'variant': 'classical', 'criterion': 'all'}
+--------------------------------------------------------------------------------
+{'precision': 0.7090000510215759, 'success@10': 0.9500000476837158, 'mrr': 0.8014556765556335, 'best_model': 'logs/ret/2016/arabic/transfer/3403636_clf-2016/logs/clf/2016/arabic/version_0/checkpoints/clf-2016-arabic-b512-epoch=19.ckpt/all/version_0/checkpoints/ret-2016-arabic-b512-epoch=49.ckpt', 'seed': 42, 'seed_id': 0, 'lang': 'arabic', 'dataset': '2016', 'variant': 'classical', 'criterion': 'all'}
+--------------------------------------------------------------------------------
+{'precision': 0.7547500133514404, 'success@10': 0.9590000510215759, 'mrr': 0.8323162198066711, 'best_model': 'logs/ret/2016/arabic/transfer/3403636_clf-2016/logs/clf/2016/arabic/version_0/checkpoints/clf-2016-arabic-b512-epoch=19.ckpt/relative_shuffle/version_0/checkpoints/ret-2016-arabic-b512-epoch=09.ckpt', 'seed': 42, 'seed_id': 0, 'lang': 'arabic', 'dataset': '2016', 'variant': 'classical', 'criterion': 'relative shuffle'}
+--------------------------------------------------------------------------------
+{'precision': 0.7820000648498535, 'success@10': 0.9692500233650208, 'mrr': 0.8549010157585144, 'best_model': 'logs/ret/2016/arabic/transfer/3403636_clf-2016/logs/clf/2016/arabic/version_0/checkpoints/clf-2016-arabic-b512-epoch=19.ckpt/relative_shuffle/version_0/checkpoints/ret-2016-arabic-b512-epoch=49.ckpt', 'seed': 42, 'seed_id': 0, 'lang': 'arabic', 'dataset': '2016', 'variant': 'classical', 'criterion': 'relative shuffle'}
+--------------------------------------------------------------------------------
+{'precision': 0.7815000414848328, 'success@10': 0.9690000414848328, 'mrr': 0.854434072971344, 'best_model': 'logs/ret/2016/arabic/transfer/3403636_clf-2016/logs/clf/2016/arabic/version_0/checkpoints/clf-2016-arabic-b512-epoch=19.ckpt/relative_shuffle/version_0/checkpoints/ret-2016-arabic-b512-epoch=49-v1.ckpt', 'seed': 42, 'seed_id': 0, 'lang': 'arabic', 'dataset': '2016', 'variant': 'classical', 'criterion': 'relative shuffle'}
+--------------------------------------------------------------------------------
+{'precision': 0.780750036239624, 'success@10': 0.9690000414848328, 'mrr': 0.8530052900314331, 'best_model': 'logs/ret/2016/arabic/transfer/3403636_clf-2016/logs/clf/2016/arabic/version_0/checkpoints/clf-2016-arabic-b512-epoch=19.ckpt/relative_shuffle/version_0/checkpoints/ret-2016-arabic-b512-epoch=48.ckpt', 'seed': 42, 'seed_id': 0, 'lang': 'arabic', 'dataset': '2016', 'variant': 'classical', 'criterion': 'relative shuffle'}
+--------------------------------------------------------------------------------
+{'precision': 0.9085000157356262, 'success@10': 0.9925000667572021, 'mrr': 0.9444138407707214, 'best_model': 'logs/ret/2016/finnish/transfer/3403636_clf-2016/logs/clf/2016/finnish/version_0/checkpoints/clf-2016-finnish-b512-epoch=14.ckpt/relative_shuffle/version_0/checkpoints/ret-2016-finnish-b512-epoch=49.ckpt', 'seed': 42, 'seed_id': 0, 'lang': 'finnish', 'dataset': '2016', 'variant': 'classical', 'criterion': 'relative shuffle'}
+--------------------------------------------------------------------------------
+{'precision': 0.8647584319114685, 'success@10': 0.9994698762893677, 'mrr': 0.9228525757789612, 'best_model': 'logs/ret/2016/japanese/transfer/3403636_clf-2016/logs/clf/2016/japanese/version_0/checkpoints/clf-2016-japanese-b512-epoch=12.ckpt/relative_shuffle/version_0/checkpoints/ret-2016-japanese-b512-epoch=149.ckpt', 'seed': 42, 'seed_id': 0, 'lang': 'japanese', 'dataset': '2016', 'variant': 'classical', 'criterion': 'relative shuffle'}
+--------------------------------------------------------------------------------
+{'precision': 0.8462062478065491, 'success@3': 0.9826593399047852, 'success@5': 0.9975768327713013, 'success@10': 0.9994888305664062, 'mrr': 0.9114495515823364, 'best_model': 'logs/ret/2016/japanese/transfer/3403636_clf-2016/logs/clf/2016/japanese/version_0/checkpoints/clf-2016-japanese-b512-epoch=12.ckpt/relative_shuffle/version_0/checkpoints/ret-2016-japanese-b512-epoch=59.ckpt', 'seed': 42, 'seed_id': 0, 'lang': 'japanese', 'dataset': '2016', 'variant': 'classical', 'criterion': 'relative shuffle'}
+--------------------------------------------------------------------------------
+{'precision': 0.968500018119812, 'success@3': 0.9927500486373901, 'success@5': 0.9955000281333923, 'success@10': 0.9980000257492065, 'mrr': 0.9805154800415039, 'best_model': 'logs/ret/2016/georgian/transfer/3403636_clf-2016/logs/clf/2016/georgian/version_0/checkpoints/clf-2016-georgian-b512-epoch=19.ckpt/relative_shuffle/version_0/checkpoints/ret-2016-georgian-b512-epoch=49.ckpt', 'seed': 42, 'seed_id': 0, 'lang': 'georgian', 'dataset': '2016', 'variant': 'classical', 'criterion': 'relative shuffle'}

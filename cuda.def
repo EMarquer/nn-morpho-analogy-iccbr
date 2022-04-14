@@ -1,0 +1,53 @@
+Bootstrap: docker
+From: nvidia/cuda:11.3.0-devel-ubuntu20.04
+Stage: build
+
+%help
+This is a singularity container designed for use of Python 3.9, PyTorch, 
+PyTorchLightning, and CUDA 11.3.
+
+To build on Grid5000, start a job and run:
+    `sudo-g5k /grid5000/code/bin/singularity build cuda.sif cuda.def`
+Standard usage on Grid5000 is as follows:
+    `/grid5000/code/bin/singularity run --nv cuda.sif python my-script.py`
+Or, using orpailleur data storage as an example:
+    `DATAPATH=/srv/storage/orpailleur@talc-data2.nancy.grid5000.fr/user/`
+    `/grid5000/code/bin/singularity run -B $DATAPATH/data-folder,$DATAPATH/other-data-folder --nv cuda.sif python my-script.py`
+On any other platform than Grid5000, replace `/grid5000/code/bin/singularity` by
+`singularity`.
+
+To extend this singularity container with other python packages, you can either 
+copy and modify the def file or use `Bootstrap: localimage` followed by 
+`From: /path/to/this/image/` to add only the required packages in your own def
+file.
+
+%environment
+    export lang=c.utf-8
+    export tz=europe/paris
+    export LD_LIBRARY_PATH=/opt/miniconda/lib/:/.singularity.d/libs/
+    export PYTHONPATH=/opt/miniconda/lib/python3.8/site-packages/
+    export PATH=/opt/miniconda/bin:$PATH
+
+%post
+    apt update -y && apt upgrade -y
+    apt install git g++ wget python3 swig -y
+
+    # install conda
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
+    bash ~/miniconda.sh -b -p /opt/miniconda
+    export PATH=/opt/miniconda/bin:$PATH
+
+    # install useful binaries and basic libraries
+    conda install numpy ninja pyyaml mkl mkl-include setuptools cmake cffi typing_extensions future six requests dataclasses
+
+    # cuda 11.0
+    conda install pytorch torchtext cudatoolkit=11.3 -c pytorch
+    # extra conda libs
+    conda install -c conda-forge pytorch-lightning
+    conda install -c conda-forge pandas seaborn scikit-learn
+    # for lepage baseline
+    conda install -c conda-forge tabulate
+
+    pip install pebble
+
+    echo "export LD_LIBRARY_PATH=/opt/miniconda/lib/:/.singularity.d/libs/:/usr/local/cuda-11.5/lib64" >> $SINGULARITY_ENVIRONMENT

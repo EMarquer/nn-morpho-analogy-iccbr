@@ -1,0 +1,32 @@
+__pycache__
+.vscode
+.vector_cache
+
+# Some stuff that appers with singularity on Grid5000
+.nv
+etc
+run
+usr
+
+symbolic_baseline/*/*.csv
+*.pth
+
+*.gz
+*.sif
+*.zip
+siganalogies.cfg.json
+generate.py
+
+# Results folders
+logs
+results
+34*
+0*
+
+unittesting/vect
+
+snippets/fast-cosine.ipynb
+bkp
+figs
+*.bkp*
+*.bkp

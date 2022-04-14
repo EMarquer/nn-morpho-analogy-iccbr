@@ -1,0 +1,12 @@
+[submodule "sigmorphon2016"]
+	path = sigmorphon2016
+	url = https://github.com/ryancotterell/sigmorphon2016
+[submodule "embeddings/bert-base-multilingual-cased"]
+	path = embeddings/bert-base-multilingual-cased
+	url = https://huggingface.co/bert-base-multilingual-cased
+[submodule "2019"]
+	path = sigmorphon2019
+	url = git@github.com:sigmorphon/2019.git
+[submodule "data"]
+	path = siganalogies
+	url = git@github.com:EMarquer/siganalogies

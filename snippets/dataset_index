@@ -1,0 +1,21 @@
+import torch
+class DatasetIndex(torch.utils.data.Dataset):
+    def __init__(self, dataset):
+        """A simple wrapper around a dataset to return the index of the sample."""
+        self.dataset = dataset
+    def __len__(self):
+        return len(self.dataset)
+    def __getitem__(self, index):
+        return index, self.dataset[index]
+    @staticmethod
+    def collate(batch, collate_fn=id):
+        """Usage:
+        DataLoader(DatasetIndex(original_dataset),
+            collate_fn=partial(DatasetIndex.collate,
+                collate_fn=original_collate_fn),
+            ...
+        )
+        """
+        indices = [i for i, data in batch]
+        batch = [data for i, data in batch]
+        return indices, collate_fn(batch)
